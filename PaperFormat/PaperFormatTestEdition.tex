@@ -1,0 +1,60 @@
+\documentclass[a4paper]{article}
+% 引入的宏包
+\usepackage{ctex}
+\usepackage{fancyhdr} %用来设置页眉页脚内容、样式等
+\usepackage{geometry} %利用该宏包设置页面参数，包括页眉页脚的宽度等
+\usepackage{setspace} %设置间距的宏包
+\usepackage{ulem} %专门用来设置下划线相关的包
+
+\setCJKmainfont{宋体} %与\fontspec命令对应，只不过fontspec是指定英文的
+\setmainfont{Times New Roman} %设置默认英文字体看，使得中文字体不更改英文ziti
+\geometry{top=3.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm, includeheadfoot}
+
+%====================字体命令设置部分=============================%
+%=====楷体GB2312设置=====%
+\setCJKfamilyfont{kaiGB}[AutoFakeBold={3}]{楷体_GB2312} 
+%将楷体GB2312用kaiGB重命名,AutoFakeBold=3指调用\textbf加粗时字体多粗，默认值为3
+%当不调用\textbf{}时,是不会加粗的
+\newcommand{\kaiGB}{\CJKfamily{kaiGB}} %将命令重新定义，方便以后使用
+%====================end=========================================%
+
+%============以下部分都是fancyhdr包中的内容=======================%
+%\pagestyle{fancy}
+%\lhead{}
+%\chead{兰州交通大学}
+%\rhead{}
+
+\begin{document}
+	\newgeometry{top=2cm, bottom=2cm, left=3.7cm, right=2.3cm} 
+	%从此处开始执行这个页眉设置，直到遇到\restoregeometry,恢复到导言区的页面设置
+	\begin{spacing}{1.25} %设置行距为1.25倍行距
+		~\\ %首行空一行
+		%======第一行=======================%
+		\zihao{-4}{中图分类号：}
+		%\zihao{4}{\kaiGB\textbf{\underline{（四号楷体加粗）}}}
+		% 上面注释的这句，下划线随着文字改变，而我们需要固定下划线长度
+		% 然后让文字在下划线上居中，选择在下划线上生成一个固定长度的盒子
+		\zihao{4}{\kaiGB\textbf{\underline{\makebox[8em][c]{（四号楷体加粗）}}}}
+		% 在下划线上生成一个长度为8个四号字长度，文字居中的盒子
+		\hspace{\stretch{1}}
+		\zihao{-4}{密\qquad 级：}
+		\zihao{4}{\kaiGB\textbf{\underline{\makebox[8em][c]{（四号楷体加粗）}}}}\\
+		%========第二行=====================%	
+		\zihao{-4}{UDC：}
+		\zihao{4}{\kaiGB\textbf{\underline{\makebox[10em][c]{（四号楷体加粗）}}}}
+		\hspace{\stretch{1}}
+		\zihao{-4}{本校编号：}
+		\zihao{4}{\kaiGB\textbf{\underline{\makebox[8em][c]{（四号楷体加粗）}}}}	
+		\\ ~\\ 
+		%按道理，~\\就是空一行，但是没有换行符它不空一行
+		%若同时空多行例如：3行，则\\ ~\\ ~\\ ~\\，注意，每个~\\占一行
+		\kaiGB 理由
+		\zihao{3}{我的生活}
+		\underline{\hbox to 40mm{我的理想}}\\
+		\uline{1)	Supervisor \hfill }\\
+		\underline{\makebox[7em][c]{\zihao{3}{我的理想是什么}}}
+	\end{spacing}
+	%\restoregeometry
+	\section{ceng}
+	
+\end{document}
