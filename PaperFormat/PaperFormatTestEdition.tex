@@ -1,32 +1,35 @@
-\documentclass[a4paper]{article}
+\documentclass[a4paper, 12pt, twoside]{article} %12pt是小四，奇偶页页眉不同，所以是双面
 % 引入的宏包
 \usepackage{ctex}
 \usepackage{fancyhdr} %用来设置页眉页脚内容、样式等
 \usepackage{geometry} %利用该宏包设置页面参数，包括页眉页脚的宽度等
 \usepackage{setspace} %设置间距的宏包
-\usepackage{ulem} %专门用来设置下划线相关的包
+\usepackage{ulem} %专门用来设置下划线相关的包，如uline，underline不在其中
+\usepackage{graphicx} %用来插入图片的包
 
 \setCJKmainfont{宋体} %与\fontspec命令对应，只不过fontspec是指定英文的
 \setmainfont{Times New Roman} %设置默认英文字体看，使得中文字体不更改英文ziti
-\geometry{top=3.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm, includeheadfoot}
+\geometry{top=3.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
 
 %====================字体命令设置部分=============================%
 %=====楷体GB2312设置=====%
 \setCJKfamilyfont{kaiGB}[AutoFakeBold={3}]{楷体_GB2312} 
+\newcommand{\kaiGB}{\CJKfamily{kaiGB}} %将命令重新定义，方便以后使用
 %将楷体GB2312用kaiGB重命名,AutoFakeBold=3指调用\textbf加粗时字体多粗，默认值为3
 %当不调用\textbf{}时,是不会加粗的
-\newcommand{\kaiGB}{\CJKfamily{kaiGB}} %将命令重新定义，方便以后使用
+\setCJKfamilyfont{songti}[AutoFakeBold={3}]{SimSun}
+\renewcommand{\songti}{\CJKfamily{songti}}
+
+%\renewcommand{\songti}{def}
 %====================end=========================================%
-
 %============以下部分都是fancyhdr包中的内容=======================%
-%\pagestyle{fancy}
-%\lhead{}
-%\chead{兰州交通大学}
-%\rhead{}
-
+\pagestyle{fancy}
+\fancyhead[CO]{兰州交通大学}
+\fancyhead[CE]{论文题目}
+%\cfoot{-\thepage-} %设计页码的风格样式
 \begin{document}
 	\newgeometry{top=2cm, bottom=2cm, left=3.7cm, right=2.3cm} 
-	%从此处开始执行这个页眉设置，直到遇到\restoregeometry,恢复到导言区的页面设置
+	\thispagestyle{empty} %仅定义本页不要页眉页脚，不影响后面的页
 	\begin{spacing}{1.25} %设置行距为1.25倍行距
 		~\\ %首行空一行
 		%======第一行=======================%
@@ -36,7 +39,7 @@
 		% 然后让文字在下划线上居中，选择在下划线上生成一个固定长度的盒子
 		\zihao{4}{\kaiGB\textbf{\underline{\makebox[8em][c]{（四号楷体加粗）}}}}
 		% 在下划线上生成一个长度为8个四号字长度，文字居中的盒子
-		\hspace{\stretch{1}}
+		\hspace{\stretch{1}} %水平空格，直到占满整行
 		\zihao{-4}{密\qquad 级：}
 		\zihao{4}{\kaiGB\textbf{\underline{\makebox[8em][c]{（四号楷体加粗）}}}}\\
 		%========第二行=====================%	
@@ -44,17 +47,87 @@
 		\zihao{4}{\kaiGB\textbf{\underline{\makebox[10em][c]{（四号楷体加粗）}}}}
 		\hspace{\stretch{1}}
 		\zihao{-4}{本校编号：}
-		\zihao{4}{\kaiGB\textbf{\underline{\makebox[8em][c]{（四号楷体加粗）}}}}	
-		\\ ~\\ 
+		\zihao{4}{\kaiGB\textbf{\underline{\makebox[8em][c]{（四号楷体加粗）}}}}\\	
+		~\\ ~\\
 		%按道理，~\\就是空一行，但是没有换行符它不空一行
 		%若同时空多行例如：3行，则\\ ~\\ ~\\ ~\\，注意，每个~\\占一行
-		\kaiGB 理由
-		\zihao{3}{我的生活}
-		\underline{\hbox to 40mm{我的理想}}\\
-		\uline{1)	Supervisor \hfill }\\
-		\underline{\makebox[7em][c]{\zihao{3}{我的理想是什么}}}
+		%==================第三行logo================%
+		\begin{figure}[htbp]
+			\centering
+			\includegraphics*[scale=0.9]{Logo/logo.jpg}
+		\end{figure}
 	\end{spacing}
-	%\restoregeometry
-	\section{ceng}
+	\begin{spacing}{2.45}
+		%==================第四行学位论文类型========%
+		~\\
+		\zihao{1}{\heiti\centerline{工\ 程\ 硕\ 士\ 学\ 位\ 论\ 文}} %黑体ctex包已经定义了，直接使用
+		%==============第五行：论文题目=============%
+		~\\ ~\\
+		\zihao{-3}{\kaiGB{论文题目：}}
+		\zihao{2}{\kaiGB\underline{\makebox[16em][c]{（二号楷体）}}}\\
+		\hspace*{3em} \zihao{2}{\kaiGB\underline{\makebox[16em][c]{题目比较长的第二行}}}\\
+		~\\ ~\\
+		%==============第六行：学生信息==================%
+		\zihao{-3}{\kaiGB{研究生姓名：}}
+		\zihao{-2}{\kaiGB\textbf{\underline{\makebox[8em][c]{（小二号楷体加黑）}}}}
+		\hspace{\stretch{1}} 
+		\zihao{-3}{\kaiGB{学号：}}
+		\zihao{-2}{\kaiGB\textbf{\underline{\makebox[5em][c]{字体同姓名}}}}\\
+		%===============第七行：学校导师信息============%
+		~\\ ~\\
+		\zihao{4}{\songti{学校指导教师姓名：}}
+		\zihao{3}{\kaiGB\textbf{\underline{\makebox[7em][c]{三号楷体加黑}}}}
+		\hspace{\stretch{1}}
+		\zihao{4}{\songti{职称：}}
+		\zihao{3}{\kaiGB\textbf{\underline{\makebox[6em][c]{副教授}}}}\\
+		%=================第八行：企业导师信息===========%
+		\zihao{4}{\songti{企业指导教师姓名：}}
+		\zihao{3}{\kaiGB\textbf{\underline{\makebox[7em][c]{三号楷体加黑}}}}
+		\hspace{\stretch{1}}
+		\zihao{4}{\songti{职称：}}
+		\zihao{3}{\kaiGB\textbf{\underline{\makebox[6em][c]{高工}}}}\\
+		%================第九行：学位领域名称===========%
+		\zihao{-3}{\songti{申请学位工程领域名称：}}
+		\hspace{\stretch{1}}
+		\zihao{3}{\kaiGB\textbf{\underline{\makebox[9.22cm][c]{三号楷体加黑}}}}
+		%\zihao{3}{\makebox[][c]{\kaiGB\textbf{\underline{三号楷体加黑}}}}
+		\hspace{\stretch{1}}\\
+		%================第十行：论文提交日期及答辩日期=============%
+		\zihao{4}{\songti{论文提交日期：}}
+		\hspace{\stretch{1}}
+		\zihao{-4}{\kaiGB\textbf{\underline{\makebox[9em][c]{三号楷体加黑}}}}
+		\zihao{4}{\songti{论文答辩日期：}}
+		\zihao{-4}{\kaiGB\textbf{\underline{\makebox[9em][c]{高工}}}}
+	\end{spacing}
+	\newpage\thispagestyle{empty}
+	\linespread{1.5}{\selectfont
+	{\zihao{-2}{~\\ \\ \centerline{独创性声明}}\\
+	~\\  %空一行
+	\zihao{-4}\indent 本人声明所呈交的学位论文是本人在导师指导下进行的研究工作和取得的研究成果，除了文中特别加以标注和致谢之处外，论文中不包含其他人已经发表或撰写过的研究成果，也不包含获得\songti\textbf{\underline{\ 兰州交通大学\ }}或其他教育机构的学位或证书而使用过的材料。与我一同工作的同志对本研究所做的任何贡献均已在论文中作了明确的说明并表示了谢意。
+	}}\\
+	\linespread{1.25}\selectfont{~\\ ~\\ 学位论文作者签名:\hspace{8em}签字日期：\qquad\quad 年\qquad 月\qquad 日\\
+	~\\ ~\\ ~\\ ~\\ ~\\ ~\\ %空六行
+	\zihao{3}{\centerline{学位论文版权使用授权书}}\\
+	~\\
+	}
+	\linespread{1.5}\selectfont
+	{\indent 本学位论文作者完全了解 兰州交通大学 有关保留、使用学位论文的规定。特授权 兰州交通大学 可以将学位论文的全部或部分内容编入有关数据库进行检索，并采用影印、缩印或扫描等复制手段保存、汇编以供查阅和借阅。同意学校向国家有关部门或机构送交论文的复印件和磁盘。\\
+	（保密的学位论文在解密后适用本授权说明）\\
+	~\\	~\\	~\\
+	学位论文作者签名：\hspace{11em}导师签名：\\
+	签字日期：\qquad\quad 年\qquad 月\qquad 日\hspace{5em}签字日期：\qquad\quad 年\qquad 月\qquad 日\\
+	}
+	\restoregeometry
+	\cleardoublepage
+	\thispagestyle{empty}
+	\linespread{1.25}\selectfont{~\\ \\} %实现1.25 字号为小四(默认)的空行
+	\centerline{\zihao{-2}{工\ 程\ 硕\ 士\ 学\ 位\ 论\ 文}}\\
+	\zihao{3}{\linespread{1.25}\selectfont{\vspace{4ex}} %\zihao{2}{~\\}} 
+	\linespread{1.25}\selectfont{\zihao{2}{~\\ }
+%	\setcounter{page}{1}
+	\zihao{-4}{我的今天明天}
 	
+%	\section{ceng}
+%	\subsection{sdj}
+%	\subsubsection{sdjfk}	
 \end{document}
