@@ -1,0 +1,73 @@
+	\newgeometry{top=2cm, bottom=2cm, left=3.7cm, right=2.3cm, heightrounded} 
+	\thispagestyle{empty} %仅定义本页不要页眉页脚，不影响后面的页
+	
+	\vspace*{0\baselineskip} %设置行距对应word的1.25倍行距首行空行
+	%======第一行=======================%
+	\setstretch{1.345}\noindent\zihao{-4}{中图分类号：}
+	%\zihao{4}{\kaiGB\textbf{\underline{（四号楷体加粗）}}}
+	% 上面注释的这句，下划线随着文字改变，而我们需要固定下划线长度
+	% 然后让文字在下划线上居中，选择在下划线上生成一个固定长度的盒子
+	\zihao{4}{\kaiGB\textbf{\underline{\makebox[8em][c]{（四号楷体加粗）}}}}
+	% 在下划线上生成一个长度为8个四号字长度，文字居中的盒子
+	\hspace{\stretch{1}} %水平空格，直到占满整行
+	\zihao{-4}{密\qquad 级：}
+	\zihao{4}{\kaiGB\textbf{\underline{\makebox[8em][c]{（四号楷体加粗）}}}}
+	
+	%========第二行=====================%	
+	\noindent\zihao{-4}{UDC：}
+	\zihao{4}{\kaiGB\textbf{\underline{\makebox[10em][c]{（四号楷体加粗）}}}}
+	\hspace{\stretch{1}}
+	\zihao{-4}{本校编号：}
+	\zihao{4}{\kaiGB\textbf{\underline{\makebox[8em][c]{（四号楷体加粗）}}}}
+	
+	%\setstretch{1.354} ~\\ ~\\
+	\setstretch{2.48}\vspace{2\baselineskip}
+	%==================第三行logo================%
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics*[scale=0.9]{Logo/logo.jpg}
+	\end{figure}
+	
+	%\setstretch{1.354}~\\
+	\setstretch{2.48}\vspace{1\baselineskip}
+	%==================第四行学位论文类型========%
+	\zihao{1}{\heiti\centerline{工\ 程\ 硕\ 士\ 学\ 位\ 论\ 文}}%黑体ctex包已经定义了，直接使用	
+	%==============第五行：论文题目=============%
+	\setstretch{1.354}~\\ ~\\
+	
+	%\setstretch{3.97}\vspace{2\baselineskip}
+	\zihao{-3}{\kaiGB{论文题目：}}
+	\zihao{2}{\kaiGB\underline{\makebox[16em][c]{（二号楷体）}}}\\
+	\hspace*{3em} \zihao{2}{\kaiGB\underline{\makebox[16em][c]{题目比较长的第二行}}}\\
+	\setstretch{1.354}~\\ ~\\
+	%==============第六行：学生信息==================%
+	\zihao{-3}{\kaiGB{研究生姓名：}}
+	\zihao{-2}{\kaiGB\textbf{\underline{\makebox[8em][c]{（小二号楷体加黑）}}}}
+	\hspace{\stretch{1}} 
+	\zihao{-3}{\kaiGB{学号：}}
+	\zihao{-2}{\kaiGB\textbf{\underline{\makebox[5em][c]{字体同姓名}}}}\\
+	%===============第七行：学校导师信息============%
+	\setstretch{1.354}~\\ ~\\
+	\setstretch{2.167}\zihao{4}{\songti{学校指导教师姓名：}}
+	\zihao{3}{\kaiGB\textbf{\underline{\makebox[7em][c]{三号楷体加黑}}}}
+	\hspace{\stretch{1}}
+	\zihao{4}{\songti{职称：}}
+	\zihao{3}{\kaiGB\textbf{\underline{\makebox[6em][c]{副教授}}}}\\
+	%=================第八行：企业导师信息===========%
+	\zihao{4}{\songti{企业指导教师姓名：}}
+	\zihao{3}{\kaiGB\textbf{\underline{\makebox[7em][c]{三号楷体加黑}}}}
+	\hspace{\stretch{1}}
+	\zihao{4}{\songti{职称：}}
+	\zihao{3}{\kaiGB\textbf{\underline{\makebox[6em][c]{高工}}}}\\
+	%================第九行：学位领域名称===========%
+	\zihao{-3}{\songti{申请学位工程领域名称：}}
+	\hspace{\stretch{1}}
+	\zihao{3}{\kaiGB\textbf{\underline{\makebox[9.22cm][c]{三号楷体加黑}}}}
+	%\zihao{3}{\makebox[][c]{\kaiGB\textbf{\underline{三号楷体加黑}}}}
+	\hspace{\stretch{1}}\\
+	%================第十行：论文提交日期及答辩日期=============%
+	\zihao{4}{\songti{论文提交日期：}}
+	\hspace{\stretch{1}}
+	\zihao{-4}{\kaiGB\textbf{\underline{\makebox[9em][c]{三号楷体加黑}}}}
+	\zihao{4}{\songti{论文答辩日期：}}
+	\zihao{-4}{\kaiGB\textbf{\underline{\makebox[9em][c]{高工}}}}
