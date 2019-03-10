@@ -1,0 +1,12 @@
+\ifx\FlagPreamble\undefined %判断FlagPreamble标志是否定义，若没有定义(undefined)则，导入编译此文件时包含以下内容：
+	\documentclass[a4paper, 12pt, twoside]{article}
+	\input{../Preamble}
+	\begin{document}
+		\input{../FrontCover/FirstCover} %此处只能使用\input{}的原因是，include{}在读入file时会另起一页，这两就分离了不再一个页，所以出错。暂时这么理解吧
+\else
+	\include{../FrontCover/FirstCover}
+\fi %if语句结束
+
+\ifx\FlagPreamble\undefined %if语句开始
+	\end{document}
+\fi %if语句结尾

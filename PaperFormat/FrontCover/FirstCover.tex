@@ -25,7 +25,11 @@
 	%==================第三行logo================%
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics*[scale=0.9]{Logo/logo.jpg}
+		\ifx\FlagPreamble\undefined
+			\includegraphics*[scale=0.9]{../Logo/logo.jpg}
+		\else
+			\includegraphics*[scale=0.9]{Logo/logo.jpg}
+		\fi
 	\end{figure}
 	
 	%\setstretch{1.354}~\\
@@ -33,6 +37,7 @@
 	%==================第四行学位论文类型========%
 	\zihao{1}{\heiti\centerline{工\ 程\ 硕\ 士\ 学\ 位\ 论\ 文}}%黑体ctex包已经定义了，直接使用	
 	%==============第五行：论文题目=============%
+	
 	\setstretch{1.354}~\\ ~\\
 	
 	%\setstretch{3.97}\vspace{2\baselineskip}
