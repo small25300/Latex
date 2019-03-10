@@ -1,31 +1,7 @@
 \documentclass[a4paper, 12pt, twoside]{article} %12pt是小四，奇偶页页眉不同，所以是双面
 % 引入的宏包
-\usepackage{ctex}
-\usepackage{fancyhdr} %用来设置页眉页脚内容、样式等
-\usepackage{geometry} %利用该宏包设置页面参数，包括页眉页脚的宽度等
-\usepackage{setspace} %设置间距的宏包
-\usepackage{ulem} %专门用来设置下划线相关的包，如uline，underline不在其中
-\usepackage{graphicx} %用来插入图片的包
-%\includeonly{FirstCover, SecondCover, ThirdCover}
-\setCJKmainfont{宋体} %与\fontspec命令对应，只不过fontspec是指定英文的
-\setmainfont{Times New Roman} %设置默认英文字体看，使得中文字体不更改英文ziti
-\geometry{top=3.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm, includeheadfoot, heightrounded}
-
-%====================字体命令设置部分=============================%
-%=====楷体GB2312设置=====%
-\setCJKfamilyfont{kaiGB}[AutoFakeBold={3}]{楷体_GB2312} 
-\newcommand{\kaiGB}{\CJKfamily{kaiGB}} %将命令重新定义，方便以后使用
-%将楷体GB2312用kaiGB重命名,AutoFakeBold=3指调用\textbf加粗时字体多粗，默认值为3
-%当不调用\textbf{}时,是不会加粗的
-\setCJKfamilyfont{songti}[AutoFakeBold={3}]{SimSun}
-\renewcommand{\songti}{\CJKfamily{songti}}
-
-%====================end=========================================%
-%============以下部分都是fancyhdr包中的内容=======================%
-\pagestyle{fancy}
-\fancyhead[CO]{\zihao{5}{兰州交通大学}}
-\fancyhead[CE]{\zihao{5}{论文题目}}
-%\cfoot{-\thepage-} %设计页码的风格样式
+\def\FlagPreamble{} %自定义一个标志位，用在条件判断语句中使用，使得可以独立编译章节
+\input{Preamble} %将所有宏包的调用语句等，放入Preamble（导言）文件中，简化主文件结构
 \begin{document}
 	%==================第一页封面================%
 	\include{FrontCover/FirstCover}
@@ -33,5 +9,19 @@
 	\include{FrontCover/SecondCover}
 	%================第三页封面===============%
 	\include{FrontCover/ThirdCover}
-	\end{center}
+	%==============中文摘要===============%
+%	\include{Contents/AbstractCH}
+	\restoregeometry % 因为上一页中就是\cleardoublepage,所以还有一页没有用完，如果此处再开启一页，则就空出来一页。
+	\titleformat*{\section}{\centering\setstretch{1.6625}\heiti\zihao{-3}\bfseries}
+	%%raggedright指右边参差不齐，所以是左对齐，同理raggedleft是右对齐，centering是左对齐。
+	\section*{摘~~~~要} %带星号的不生成页眉页脚和目录，这个要小心了
+	摘要送到减肥技术的卡夫卡看来送到减肥克拉斯酒店开了房间奥斯卡来得及发神经的房间啊速度加快立法的时间分开了撒娇的风口浪尖上看到了附近克拉圣诞节快乐发觉快乐的房间里看撒酒店开房间快乐送到减肥凯撒尽快答复
+%	%==============EnglishAbstract===============%
+%	\include{Contents/AbstractEN}
+	\cleardoublepage
+	\titleformat*{\section}{\centering\setstretch{1.6625}\heiti\zihao{-3}\bfseries}
+	\section*{摘~~~~要}
+	时间都开了房间看书的减肥就是打飞机啊的就是卡夫卡来得及开发快乐的金坷垃附近快递费
+	\cleardoublepage
+	\section{摘~~~~要}
 \end{document}
