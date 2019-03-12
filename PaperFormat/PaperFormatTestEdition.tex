@@ -10,18 +10,11 @@
 	%================第三页封面===============%
 	\include{FrontCover/ThirdCover}
 	%==============中文摘要===============%
-%	\include{Contents/AbstractCH}
-	\restoregeometry % 因为上一页中就是\cleardoublepage,所以还有一页没有用完，如果此处再开启一页，则就空出来一页。
-	\titleformat*{\section}{\centering\setstretch{1.6625}\heiti\zihao{-3}\bfseries}
-	%%raggedright指右边参差不齐，所以是左对齐，同理raggedleft是右对齐，centering是左对齐。
-	\section*{摘~~~~要} %带星号的不生成页眉页脚和目录，这个要小心了
-	摘要送到减肥技术的卡夫卡看来送到减肥克拉斯酒店开了房间奥斯卡来得及发神经的房间啊速度加快立法的时间分开了撒娇的风口浪尖上看到了附近克拉圣诞节快乐发觉快乐的房间里看撒酒店开房间快乐送到减肥凯撒尽快答复
-%	%==============EnglishAbstract===============%
-%	\include{Contents/AbstractEN}
-	\cleardoublepage
-	\titleformat*{\section}{\centering\setstretch{1.6625}\heiti\zihao{-3}\bfseries}
-	\section*{摘~~~~要}
-	时间都开了房间看书的减肥就是打飞机啊的就是卡夫卡来得及开发快乐的金坷垃附近快递费
-	\cleardoublepage
-	\section{摘~~~~要}
+	\restoregeometry
+	\include{Contents/AbstractCH}
+	 % 因为上一页中就是\cleardoublepage,所以还有一页没有用完，如果此处再开启一页，则就空出来一页。
+	%==============English Abstract============%
+	\include{Contents/AbstractEN}
+	%=============chapter1============%
+	\include{Contents/chapter1}
 \end{document}

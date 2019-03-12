@@ -7,11 +7,15 @@
 \usepackage{titlesec} %用来设置章节标题等的样式，字体，间距等等的包
 %\usepackage{abstract} %只能用来设置摘要的特别简单的东西，查看文档，几乎不能灵活设置，所以不常使用
 %========对应titlesec包======%
-\titleformat*{\section}{\raggedright\setstretch{1.6625}\heiti\zihao{-3}\bfseries}
+\titleformat*{\section}{\raggedright\setstretch{1.25}\heiti\zihao{-3}\bfseries} %setstretch应该是1.5，但是不知道为什么1.5宽了
 \titlespacing*{\section}{0pt}{0pt}{17.385pt}
 %==========end===========%
-
-
+%============重新定义Abstract的格式===========%
+\renewenvironment{abstract}{%
+	\par\zihao{-4}%指定段落字体大小
+	\vspace*{-12.5pt}\noindent\mbox{}\hfill{\bfseries\zihao{-3}\heiti\abstractname}\hfill\mbox{}\par %\vspace{-12.5pt}不知道什么原因，headsep就是页眉到正文的距离应该是固定30pt，但是摘要却低于30pt，所以加入vspace，但是vspace在首行不起作用，所以用vspace*，但是vspace*直接空两行，所以用负距离缩减，具体只能测量长度。
+	\vskip 17.385pt} %是标题距正文的距离
+%================Abstract end============%
 
 \setCJKmainfont{宋体} %与\fontspec命令对应，只不过fontspec是指定英文的
 \setmainfont{Times New Roman} %设置默认英文字体看，使得中文字体不更改英文ziti
