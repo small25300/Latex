@@ -7,5 +7,5 @@
 # Github访问上传速度慢解决方案
 - https://blog.csdn.net/qq_26981913/article/details/81093932
 <div align="center">
-  !(https://github.com/small25300/Latex/blob/master/PaperFormat/Logo/logo.jpg?raw=true)
+  ![](https://github.com/small25300/Latex/blob/master/PaperFormat/Logo/logo.jpg?raw=true)
 </div>
