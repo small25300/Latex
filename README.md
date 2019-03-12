@@ -6,6 +6,4 @@
 - 一份Latex入门的ppt：http://www.math.zju.edu.cn:8080/linzhi/Teaching/ZJU/latex/LaTeX_crash_course.pdf
 # Github访问上传速度慢解决方案
 - https://blog.csdn.net/qq_26981913/article/details/81093932
- <div align="center">
-  ![](https://github.com/small25300/Latex/blob/master/PaperFormat/Logo/logo.jpg?raw=true)
- </div>
+ <div align="center"> ![](https://github.com/small25300/Latex/blob/master/PaperFormat/Logo/logo.jpg?raw=true)</div>
