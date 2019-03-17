@@ -4,6 +4,7 @@
 - Latex中titlesec宏包的中文翻译：https://wenku.baidu.com/view/18361148e518964bcf847cdc.html
 - Latex常用宏包的总结及一些细节：http://blog.chinaunix.net/uid-20289887-id-1710422.html
 - 一份Latex入门的ppt：http://www.math.zju.edu.cn:8080/linzhi/Teaching/ZJU/latex/LaTeX_crash_course.pdf
+- bibliography详解：https://www.cnblogs.com/longdouhzt/archive/2012/06/21/2557965.html
 - newenvironment命令详解：http://softlab.sdut.edu.cn/blog/subaochen/2017/07/%E8%AF%A6%E8%A7%A3newenvironment%E5%91%BD%E4%BB%A4/
 # Github访问上传速度慢解决方案
 - https://blog.csdn.net/qq_26981913/article/details/81093932
