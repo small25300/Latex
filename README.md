@@ -5,6 +5,7 @@
 - Latex常用宏包的总结及一些细节：http://blog.chinaunix.net/uid-20289887-id-1710422.html
 - 一份Latex入门的ppt：http://www.math.zju.edu.cn:8080/linzhi/Teaching/ZJU/latex/LaTeX_crash_course.pdf
 - bibliography详解：https://www.cnblogs.com/longdouhzt/archive/2012/06/21/2557965.html
+- custom-bib(制定自己风格的bib文件，以符合自己独特的要求)说明文档：http://mirror.lzu.edu.cn/CTAN/macros/latex/contrib/custom-bib/makebst.pdf
 - newenvironment命令详解：http://softlab.sdut.edu.cn/blog/subaochen/2017/07/%E8%AF%A6%E8%A7%A3newenvironment%E5%91%BD%E4%BB%A4/
 # Github访问上传速度慢解决方案
 - https://blog.csdn.net/qq_26981913/article/details/81093932
