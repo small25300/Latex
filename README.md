@@ -46,6 +46,21 @@
       }
     if$
   }```
+  - 关于取消book中作者后面editor的修改：
+  ```
+      FUNCTION {format.editors}
+      { editor "editor" format.names duplicate$ empty$ 'skip$
+          {
+            "" * % 此处是editor前面的那个逗号，
+            %因为我们在FUNCTION{bbl.editor和bbl.editors}中将"editor"删除了，
+            %不让它显示，但是却多了一个逗号，在此处删除。
+            " " *
+            get.bbl.editor
+            *
+          }
+        if$
+      }
+  ```
 - newenvironment命令详解：http://softlab.sdut.edu.cn/blog/subaochen/2017/07/%E8%AF%A6%E8%A7%A3newenvironment%E5%91%BD%E4%BB%A4/
 # Github访问上传速度慢解决方案
 - https://blog.csdn.net/qq_26981913/article/details/81093932
