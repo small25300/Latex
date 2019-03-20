@@ -3,7 +3,7 @@
 FUNCTION {format.editors}
 { editor "editor" format.names duplicate$ empty$ 'skip$
     {
-      "" * % 此处是editor前的逗号，在FUNCTION{bbl.editor和bbl.editors}中将"editor"删除了，但是却多了一个逗号，在此处删除。
+      "" * % 此处是editor前的逗号，在FUNCTION{bbl.editor和bbl.editors}中将"editor"删除了，却多了一个逗号，在此处删除。
       " " *
       get.bbl.editor
       *
