@@ -11,7 +11,7 @@
       if$
     }
 ```    
-## 1.如何修改title后面与publisher后面标点符号：
+## 2.如何修改title后面与publisher后面标点符号：
 ```
     FUNCTION {format.org.or.pub}
     { 't :=
@@ -47,4 +47,56 @@
         }
       if$
     }
+```
+## 3.删除et al前面的逗号：
+```
+FUNCTION {format.names}
+{ 'bibinfo :=
+  duplicate$ empty$ 'skip$ {
+  's :=
+  "" 't :=
+  #1 'nameptr :=
+  s num.names$ 'numnames :=
+  numnames 'namesleft :=
+    { namesleft #0 > }
+    { s nameptr
+      "{vv~}{ll}{ jj}{ f{.}.}"
+      format.name$
+      bibinfo bibinfo.check
+      't :=
+      nameptr #1 >
+        {
+          nameptr #3
+          #1 + =
+          numnames #3
+          > and
+            { "others" 't :=
+              #1 'namesleft := }
+            'skip$
+          if$
+          namesleft #1 >
+            { ", " * t * }
+            {
+              s nameptr "{ll}" format.name$ duplicate$ "others" =
+                { 't := }
+                { pop$ }
+              if$
+              "" * % 就算选择et al前面没有逗号，但是依旧存在逗号，在此处删除，就ok了。
+              t "others" =
+                {
+                  " " * bbl.etal *
+                }
+                { " " * t * }
+              if$
+            }
+          if$
+        }
+        't
+      if$
+      nameptr #1 + 'nameptr :=
+      namesleft #1 - 'namesleft :=
+    }
+  while$
+  } if$
+}
 ```
