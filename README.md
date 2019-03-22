@@ -10,7 +10,7 @@
   - custom-bib安装使用中文网站1：https://blog.csdn.net/xueshengke/article/details/74043243
   - custom-bib使用中文网站2：https://blog.csdn.net/tinkle181129/article/details/49822171/
   - 如何修改由custom-bib生成的自己的.bst文件：https://www.zhihu.com/question/26893808
-  - 如何给custom-bib生成的.bst文件中添加中文字段，用来支持中文显示：http://yxy2581559345.lofter.com/post/1d3bba06_969369d
+  - 如何给custom-bib生成的.bst文件中添加中文字段：http://yxy2581559345.lofter.com/post/1d3bba06_969369d
   - bst语法简介：http://blog.sina.com.cn/s/blog_6cf921f301018psq.html
 - newenvironment命令详解：http://softlab.sdut.edu.cn/blog/subaochen/2017/07/%E8%AF%A6%E8%A7%A3newenvironment%E5%91%BD%E4%BB%A4/
 # Github访问上传速度慢解决方案
