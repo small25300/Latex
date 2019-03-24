@@ -25,5 +25,5 @@
 <br/> 
 <p align="center">图2 Word与Latex页眉页脚转换计算图</p>    
     - $$LatexTop = WordTop + headheight + 30pt(段后距离，实质上就是headsep)$$
-    - $$LatexBottom = WordBottom + 30pt(近似：10.54mm)$$，因为页脚段前30pt相当于页边距增加30pt（textheight减小30pt），所以计算简单。
+    - $$LatexBottom = WordBottom + 30pt(近似：10.54mm)$$，因为页脚段前30pt相当于页边距增加30pt（textheight减小30pt），计算简单。
     
