@@ -3,3 +3,4 @@
   - word与latex页眉页脚定义区别：（详见图1）
     - 区别1：word中的页眉、页脚不再正文Body(正文)中，而latex包含两种格式，一种是默认与word一致，另一种是页眉页脚在Body中，latex中用\\includeheadfoot命令在geometry宏包中进行设置。
     - 区别2：word中的页眉顶端距离是指页眉字体上边沿距离A4纸张上边沿的距离，页脚底端距离指页脚字体下边沿与A4纸下边沿的距离。
+<div align=center><img src="https://github.com/small25300/ImageLibrary/blob/master/DefinitionOfHeadfoot/Word%E9%A1%B5%E7%9C%89%E9%A1%B5%E8%84%9A.jpg"></div>
