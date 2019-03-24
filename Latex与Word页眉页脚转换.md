@@ -20,7 +20,7 @@
   - Word中页眉页脚包含段后、段前设置的情况：
     - 如果Word中页眉页脚有段前、段后值，如该例中段前、段后都为30pt，则Latex中应该重新规划上下页边距，因为Word页眉页脚的段后、段前值改变了textheight，所以应该先计算Latex页眉、页脚的相关距离，再计算Latex的页边距（目的是让Latex页面设置与Word完全相同）。如图2 所示：
 <div align=center>
-  <img src="https://github.com/small25300/ImageLibrary/blob/master/DefinitionOfHeadfoot/Word%E9%A1%B5%E7%9C%89%E9%A1%B5%E8%84%9A.jpg", width = 50%,height = 50%><img src="https://github.com/small25300/ImageLibrary/blob/master/DefinitionOfHeadfoot/%E5%8C%85%E5%90%AB%E6%AE%B5%E5%89%8D%E6%AE%B5%E5%90%8E%E7%9A%84%E8%BD%AC%E6%8D%A2.jpg", width = 50%,height = 50%>
+  <img src=<img src="https://github.com/small25300/ImageLibrary/blob/master/DefinitionOfHeadfoot/%E5%8C%85%E5%90%AB%E6%AE%B5%E5%89%8D%E6%AE%B5%E5%90%8E%E7%9A%84%E8%BD%AC%E6%8D%A2.jpg", width = 50%,height = 50%>
 </div>
 <br/> 
 <p align="center">图2 Word与Latex页眉页脚转换计算图</p>    
