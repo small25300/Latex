@@ -7,6 +7,7 @@
   <img src="https://github.com/small25300/ImageLibrary/blob/master/DefinitionOfHeadfoot/Word%E9%A1%B5%E7%9C%89%E9%A1%B5%E8%84%9A.jpg", width = 50%,height = 50%><img src="https://github.com/small25300/ImageLibrary/blob/master/DefinitionOfHeadfoot/Latex%E9%A1%B5%E7%9C%89%E9%A1%B5%E8%84%9A.jpg", width = 50%,height = 50%>
 </div>
 <br/> 
-<center> 图1 Word与Latex页眉页脚定义图 </center>//
+<center> 图1 Word与Latex页眉页脚定义图 </center>
+
 
 <center> 图1Word与Latex页眉页脚定义图 </center>
