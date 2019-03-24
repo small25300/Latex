@@ -5,7 +5,8 @@
     - 区别2：word中的页眉顶端距离是指页眉字体上边沿距离A4纸张上边沿的距离，页脚底端距离指页脚字体下边沿与A4纸下边沿的距离。
 <div align=center>
   <img src="https://github.com/small25300/ImageLibrary/blob/master/DefinitionOfHeadfoot/Word%E9%A1%B5%E7%9C%89%E9%A1%B5%E8%84%9A.jpg", width = 50%,height = 50%><img src="https://github.com/small25300/ImageLibrary/blob/master/DefinitionOfHeadfoot/Latex%E9%A1%B5%E7%9C%89%E9%A1%B5%E8%84%9A.jpg", width = 50%,height = 50%>
-<br/>  
+ 
+ 
 图1 Word与Latex页眉页脚定义
 </div>
 <center>
