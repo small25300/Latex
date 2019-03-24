@@ -1,6 +1,5 @@
 # Word与Latex页眉页脚转换计算
 ## 1. Word与Latex页眉页脚的定义
-<script type = "text/javascript" src = "http:/cdn.mathjax.org/mathjax/latex/MathJax.js?config=default"></script>
   - 要求：word页边距为：3.5cm，2.5cm，2.5cm，2.5cm（分别对应上、下、左、右），页眉顶端距离：2.5cm，段后30磅，页脚底端距离：2cm，段前30磅。
   - word与latex页眉页脚定义区别：（详见图1）
     - 区别1：word中的页眉、页脚不再正文Body(正文)中，而latex包含两种格式，一种是默认与word一致，另一种是页眉页脚在Body中，latex中用\\includeheadfoot命令在geometry宏包中进行设置。
@@ -16,8 +15,8 @@
     - Latex中textheight即Body是固定不变的，因此若word中页眉页脚有段后、段前设置，应该在转为Latex时考虑进去。
 ## 2. Word与Latex页眉页脚转换具体计算
   - Word中页眉页脚不包含段后、段前设置的情况：
-    - Latex中：$headheight + headsep = Word上页边距 - Word页眉顶端距离$，其中$ headheight = Word页眉字体大小值及行间距 $，例如5号字就是9pt。
-    - Latex中：$$ footskip = Word下页边距 - Word页脚底端距离 $$。
+    - Latex中：headheight + headsep = Word上页边距 - Word页眉顶端距离，其中headheight = Word页眉字体大小值及行间距，例如5号字就是9pt。
+    - Latex中：footskip = Word下页边距 - Word页脚底端距离。
   - Word中页眉页脚包含段后、段前设置的情况：
     - 如果Word中页眉页脚有段前、段后值，如该例中段前、段后都为30pt，则Latex中应该重新规划上下页边距，因为Word页眉页脚的段后、段前值改变了textheight，所以应该先计算Latex页眉、页脚的相关距离，再计算Latex的页边距（目的是让Latex页面设置与Word完全相同）。如图2 所示：
     <div align=center>
@@ -27,7 +26,5 @@
     <p align="center">图2 Word与Latex页眉页脚转换计算图</p>   
 
     - 转换公式：
-      - \begin{equation}LatexTop = WordTop + headheight + 30pt(段后距离，实质上就是headsep) \end{equation}
-      - $$LatexBottom = WordBottom + 30pt(近似：10.54mm)$$，因为页脚段前30pt相当于页边距增加30pt（textheight减小30pt），计算简单。
-      $$ \alpha \times 5=6$$
-    
+      - LatexTop = WordTop + headheight + 30pt(段后距离，实质上就是headsep) 
+      - LatexBottom = WordBottom + 30pt(近似：10.54mm)，因为页脚段前30pt相当于页边距增加30pt（textheight减小30pt），计算简单。
