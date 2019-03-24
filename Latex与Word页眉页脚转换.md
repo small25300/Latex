@@ -15,7 +15,7 @@
     - Latex中textheight即Body是固定不变的，因此若word中页眉页脚有段后、段前设置，应该在转为Latex时考虑进去。
 ## Word与Latex页眉页脚转换具体计算
   - Word中页眉页脚不包含段后、段前设置的情况：
-    - Latex中：$$ headheight + headsep = Word上页边距 - Word页眉顶端距离 $$，其中$$ headheight = Word页眉字体大小值及行间距 $$，例如5号字就是9pt。
+    - Latex中：$headheight + headsep = Word上页边距 - Word页眉顶端距离$，其中$ headheight = Word页眉字体大小值及行间距 $，例如5号字就是9pt。
     - Latex中：$$ footskip = Word下页边距 - Word页脚底端距离 $$。
   - Word中页眉页脚包含段后、段前设置的情况：
     - 如果Word中页眉页脚有段前、段后值，如该例中段前、段后都为30pt，则Latex中应该重新规划上下页边距，因为Word页眉页脚的段后、段前值改变了textheight，所以应该先计算Latex页眉、页脚的相关距离，再计算Latex的页边距（目的是让Latex页面设置与Word完全相同）。如图2 所示：
