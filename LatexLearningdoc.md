@@ -13,7 +13,3 @@
   - 如何给custom-bib生成的.bst文件中添加中文字段：http://yxy2581559345.lofter.com/post/1d3bba06_969369d
   - bst语法简介：http://blog.sina.com.cn/s/blog_6cf921f301018psq.html
 - newenvironment命令详解：http://softlab.sdut.edu.cn/blog/subaochen/2017/07/%E8%AF%A6%E8%A7%A3newenvironment%E5%91%BD%E4%BB%A4/
-# Github访问上传速度慢解决方案
-- https://blog.csdn.net/qq_26981913/article/details/81093932
- <div align=center><img src="https://github.com/small25300/Latex/blob/master/PaperFormat/Logo/logo.jpg?raw=true"></div>
- 
