@@ -23,7 +23,8 @@
   <img src="https://github.com/small25300/ImageLibrary/blob/master/DefinitionOfHeadfoot/%E5%8C%85%E5%90%AB%E6%AE%B5%E5%89%8D%E6%AE%B5%E5%90%8E%E7%9A%84%E8%BD%AC%E6%8D%A2.jpg", width = 50%,height = 50%>
 </div>
 <br/> 
-<p align="center">图2 Word与Latex页眉页脚转换计算图</p>    
+<p align="center">图2 Word与Latex页眉页脚转换计算图</p>   
+
     - $$LatexTop = WordTop + headheight + 30pt(段后距离，实质上就是headsep)$$
     - $$LatexBottom = WordBottom + 30pt(近似：10.54mm)$$，因为页脚段前30pt相当于页边距增加30pt（textheight减小30pt），计算简单。
     
