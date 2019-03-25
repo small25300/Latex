@@ -5,7 +5,7 @@ FUNCTION {format.editors}
     {
       "" * % 此处是editor前的逗号，在FUNCTION{bbl.editor和bbl.editors}中将"editor"删除了，却多了一个逗号，在此处删除。
       " " *
-      get.bbl.editor
+      %get.bbl.editor %将book中的editors关键字不显示。
       *
     }
   if$
@@ -84,7 +84,7 @@ FUNCTION {format.names}
               "" * % 就算选择et al前面没有逗号，但是依旧存在逗号，在此处删除，就ok了。
               t "others" =
                 {
-                  " " * bbl.etal *
+                  " " * bbl.etal *% 将两个*号之间的bbl.etal删除，则不让etal显示，但是英文参考文献需要，所以不删除，但中文参考文献却不需要，所以所有中文作者超过3个的，仅写3个最后一个加“等”字，自己维护。
                 }
                 { " " * t * }
               if$
@@ -99,4 +99,8 @@ FUNCTION {format.names}
   while$
   } if$
 }
+```
+## 4.硕博论文显示学校
+```
+
 ```
