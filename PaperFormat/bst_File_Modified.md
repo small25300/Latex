@@ -48,7 +48,7 @@ FUNCTION {format.org.or.pub}
   if$
 }
 ```
-## 3.删除et al前面的逗号：
+## 3.删除et al前面的逗号（但book中两个作者之间的逗号也跟随消失）：
 ```
 FUNCTION {format.names}
 { 'bibinfo :=
@@ -81,7 +81,7 @@ FUNCTION {format.names}
                 { 't := }
                 { pop$ }
               if$
-              "" * % 就算选择et al前面没有逗号，但是依旧存在逗号，在此处删除，就ok了。
+              "," *  %etal前面的逗号删除,但是同时将book中作者间的逗号页删除了，所以此处逗号不能删除。
               t "others" =
                 {
                   " " * bbl.etal *% 将两个*号之间的bbl.etal删除，则不让etal显示，但是英文参考文献需要，所以不删除，但中文参考文献却不需要，所以所有中文作者超过3个的，仅写3个最后一个加“等”字，自己维护。
@@ -101,6 +101,23 @@ FUNCTION {format.names}
 }
 ```
 ## 4.硕博论文显示学校
-```
 
-```
+    * 硕士学位论文
+
+        ```
+        FUNCTION {mastersthesis} %注意：在bib中用@mastersthesis，而不是@thesis，这是硕士论文
+        { output.bibitem
+          format.authors "author" output.check
+          new.block
+          format.btitle
+          "title" output.check
+          new.block
+          % bbl.mthesis format.thesis.type output.nonnull %将英文的Master's thesis不显示 
+          school "school" bibinfo.warn output 
+          address "address" bibinfo.check output
+          format.date "year" output.check
+          new.block
+          format.note output
+          fin.entry
+        }
+        ```
