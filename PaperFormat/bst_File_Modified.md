@@ -101,23 +101,39 @@ FUNCTION {format.names}
 }
 ```
 ## 4.硕博论文显示学校
-
-    * 硕士学位论文
-
-        ```
-        FUNCTION {mastersthesis} %注意：在bib中用@mastersthesis，而不是@thesis，这是硕士论文
-        { output.bibitem
-          format.authors "author" output.check
-          new.block
-          format.btitle
-          "title" output.check
-          new.block
-          % bbl.mthesis format.thesis.type output.nonnull %将英文的Master's thesis不显示 
-          school "school" bibinfo.warn output 
-          address "address" bibinfo.check output
-          format.date "year" output.check
-          new.block
-          format.note output
-          fin.entry
-        }
-        ```
+- 硕士学位论文
+```
+FUNCTION {mastersthesis} %注意：在bib中用@mastersthesis，而不是@thesis，这是硕士论文
+{ output.bibitem
+  format.authors "author" output.check
+  new.block
+  format.btitle
+  "title" output.check
+  new.block
+  % bbl.mthesis format.thesis.type output.nonnull %将英文的Master's thesis不显示，此处明显在学校前显示，若想在学校后显示，放到school后面即可。
+  school "school" bibinfo.warn output 
+  address "address" bibinfo.check output
+  format.date "year" output.check
+  new.block
+  format.note output
+  fin.entry
+}
+```
+- 博士学位论文
+```
+FUNCTION {phdthesis}
+{ output.bibitem
+  format.authors "author" output.check
+  new.block
+  format.btitle
+  "title" output.check
+  new.block
+  %bbl.phdthesis format.thesis.type output.nonnull %将英文的Master's thesis不显示,此处明显在学校前显示，若想在学校后显示，放到school后面即可。
+  school "school" bibinfo.warn output
+  address "address" bibinfo.check output
+  format.date "year" output.check
+  new.block
+  format.note output
+  fin.entry
+}
+```
