@@ -13,3 +13,6 @@
   - 如何给custom-bib生成的.bst文件中添加中文字段：http://yxy2581559345.lofter.com/post/1d3bba06_969369d
   - bst语法简介：http://blog.sina.com.cn/s/blog_6cf921f301018psq.html
 - newenvironment命令详解：http://softlab.sdut.edu.cn/blog/subaochen/2017/07/%E8%AF%A6%E8%A7%A3newenvironment%E5%91%BD%E4%BB%A4/
+# github中的markdown文件支持latex公式最简单的方法
+- 在Chrome（谷歌）浏览器中安装插件：MathJax Plugin for Github即可，网址：https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima
+  - 当然，该插件是Google开发的，因此只能Google浏览器使用，也就是说只有安装了该插件的Google浏览器才能将GitHub的markdown文件中的latex公式正常显示，剩余浏览器都是源代码显示。
