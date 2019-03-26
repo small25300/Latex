@@ -1,0 +1,19 @@
+\begin{thebibliography}{1}
+\setlength{\bibspacing}{0.5ex}\zihao{5}
+\bibitem{ccc}
+刘俊坤.
+\newblock 神经网路计算.
+\newblock 南京邮电大学硕士学位论文, 2018.
+
+\bibitem{bbb}
+程序, 陈世福 .
+\newblock
+\newblock ASP数据库系统开发实例导航. 兰州: 兰州大学出版社,
+  2002.
+
+\bibitem{aaa}
+周志华, 陈世福, 送到附近等.
+\newblock 神经网络集成.
+\newblock 计算机学报, 2002, 25(1):1--8.
+
+\end{thebibliography}

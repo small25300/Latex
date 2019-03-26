@@ -5,17 +5,83 @@
 \usepackage{ulem} %专门用来设置下划线相关的包，如uline，underline不在其中
 \usepackage{graphicx} %用来插入图片的包
 \usepackage{titlesec} %用来设置章节标题等的样式，字体，间距等等的包
-%\usepackage{abstract} %只能用来设置摘要的特别简单的东西，查看文档，几乎不能灵活设置，所以不常使用
-%========对应titlesec包======%
-\titleformat*{\section}{\raggedright\setstretch{1.25}\heiti\zihao{-3}\bfseries} %setstretch应该是1.5，但是不知道为什么1.5宽了
+\usepackage{titletoc} %用来设置目录格式，并不是生成目录的
+\usepackage[backref=true]{hyperref}
+\usepackage{bibspacing} % 需要单独下载放在当前目录下。
+
+\hypersetup{hidelinks} %隐藏超链接中的红色的框
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%
+%==================================对应titlesec包=======================%
+\titlelabel{\thetitle \hspace{0.5em}} %设置所有section、subsection、subsubsection序号与标题之间的空格间距
+\titleformat*{\section}{\raggedright\setstretch{1.25}\zihao{-3}\heiti} %setstretch应该是1.5，但是不知道为什么1.5宽了
 \titlespacing*{\section}{0pt}{0pt}{17.385pt}
-%==========end===========%
-%============重新定义Abstract的格式===========%
-\renewenvironment{abstract}{%
-	\par\zihao{-4}%指定段落字体大小
-	\vspace*{-12.5pt}\noindent\mbox{}\hfill{\bfseries\zihao{-3}\heiti\abstractname}\hfill\mbox{}\par %\vspace{-12.5pt}不知道什么原因，headsep就是页眉到正文的距离应该是固定30pt，但是摘要却低于30pt，所以加入vspace，但是vspace在首行不起作用，所以用vspace*，但是vspace*直接空两行，所以用负距离缩减，具体只能测量长度。
-	\vskip 17.385pt} %是标题距正文的距离
-%================Abstract end============%
+%=================subsection===================%
+\titleformat*{\subsection}{\vspace{0.5pt}\raggedright\setstretch{1.5}\heiti\zihao{4}\bfseries}
+%===================subsubsection=============%
+\titleformat*{\subsubsection}{\vspace{0.5pt}\raggedright\setstretch{1.5}\heiti\bfseries}
+%========================================end==========================%
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%
+%============用titletoc包中的命令设置section的目录格式=============%
+\titlecontents{section} %titletoc中用来设置目录格式的命令
+[1em] %是目录内容（不包括标签即序号）距离文档body左边距的距离（页面文字不缩进的开头位置）
+%因为目录内容距离body左边有一个序号（1、2、3等）和一个空格所以是1em，序号占0.5em，空格占0.5em，合起来就是1em
+{}
+{\contentslabel{1em}} % 在目录label还没有放置之前，空出的空间，然后再此空间的开头放置label
+%注意：不是label距离目录内容的距离，而是label距离内容的距离+label所占的宽度
+{\hspace{-1em}} %没有标签序号的目录的使用，使得不带序号的目录与带序号的目录的序号对其。
+{\titlerule*[3.5pt]{.}\hspace{-1em}\contentspage} %此处的\hspace{}用来控制连线点与页码的距离
+
+%=================section设置end========================%
+
+%============用titletoc包中的命令设置subsection的目录格式=============%
+\titlecontents{subsection}[3.8em]{}{\contentslabel{1.8em}}{}{\titlerule*[3.5pt]{.}\hspace{-1em}\contentspage} 
+%=================subsection设置end========================%
+
+%============用titletoc包中的命令设置subsubsection的目录格式=============%
+\titlecontents{subsubsection}[6.4em]{}{\contentslabel{2.6em}}{}{\titlerule*[3.5pt]{.}\hspace{-1em}\contentspage} 
+%=================subsubsection设置end========================%
+%======================目录标题格式的设置=======================%
+\renewcommand{\contentsname}{\vspace*{-1.2em}\centerline{目\hspace{2em}录}\vspace{-2.7em}} %让目录标题居中,vspace{}指目录标题距离目录内容的垂直距离。
+%=====================目录标题格式设置end================%
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%
+%================自定义environment===================================%
+
+%============自定义AbstractCH=============%
+\newenvironment{AbstractCH}
+{\begin{center}\setstretch{1.5}\bfseries\heiti\zihao{-3} 摘\hspace{2em}要 \vskip 17.385pt\end{center}\par\zihao{-4}} %\end{center}后的\par\zihao{-4}指标题后面内容另起一段，字体为小四
+{\vspace{3ex}\par\bfseries\noindent\heiti\textbf{关键字：}
+\vspace{3ex}\par\bfseries\noindent\heiti\textbf{论文类型：}} %以关键字为结尾
+%==============AbstractCh end=============%
+
+%============自定义AbstractEN=============%
+\newenvironment{AbstractEN}
+{\begin{center}\setstretch{1.5}\bfseries\heiti\zihao{-3} Abstract \vskip 17.385pt\end{center}\par\zihao{-4}} %\end{center}后的\par\zihao{-4}指标题后面内容另起一段，字体为小四
+{\vspace{3ex}\par\bfseries\noindent Key Words：} %以关键字为结尾
+%==============AbstractCh end=============%
+
+%============自定义Conclusion=============%
+\newenvironment{Conclusion}
+{\begin{center}\setstretch{1.5}\bfseries\heiti\zihao{-3} 结\hspace{2em}论 \vskip 17.385pt\end{center}\par\zihao{-4}} %\end{center}后的\par\zihao{-4}指标题后面内容另起一段，字体为小四，没有指定Conclusion环境的结束，因为不需要
+%==============Conclusion end=============%
+
+%==============自定义Thanks==============%
+\newenvironment{Thanks}
+{\begin{center}\setstretch{1.5}\bfseries\heiti\zihao{-3} 致\hspace{2em}谢 \vskip 17.385pt\end{center}\par\zihao{-4}} %\end{center}后的\par\zihao{-4}指标题后面内容另起一段，字体为小四
+%==============Thanks end=============%
+
+%==============自定义Reference=========%
+%\newenvironment{Reference}
+%{\begin{center}\setstretch{1.5}\bfseries\heiti\zihao{-3} 参\hspace{1em}考\hspace{1em}文\hspace{1em}献 \vskip 17.385pt\end{center}\par\zihao{-4}} %\end{center}后的\par\zihao{-4}指标题后面内容另起一段，字体为小四
+%%%参考文献有自己的定义标题及相应的格式,不需要重新定义
+%==============自定义Appendix==============%
+\newenvironment{Appendix}
+{\begin{center}\setstretch{1.5}\bfseries\heiti\zihao{-3} 附录A~~我的附录内容 \vskip 17.385pt\end{center}\par\zihao{-4}} %\end{center}后的\par\zihao{-4}指标题后面内容另起一段，字体为小四
+%==============Appendix end=============%
+
+%================================自定义end================================%
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%
+%\setCJKmainfont{宋体}前面必须空一行，才可以，不然出错，具体原因不详。
 
 \setCJKmainfont{宋体} %与\fontspec命令对应，只不过fontspec是指定英文的
 \setmainfont{Times New Roman} %设置默认英文字体看，使得中文字体不更改英文ziti
@@ -32,6 +98,7 @@
 \renewcommand{\songti}{\CJKfamily{songti}}
 \setstretch{1.33} %设置全篇的行间距默认为1.33近似word中的1.25
 %====================end=========================================%
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%
 %============以下部分都是fancyhdr包中的内容=======================%
 \pagestyle{fancy}
 \fancyhead[CO]{\zihao{5}{论文中文题目}}
@@ -42,3 +109,8 @@
 \lfoot{}
 \rfoot{}
 %\cfoot{-\thepage-} %设计页码的风格样式
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%
+%================参考文献引用==========%
+\renewcommand{\refname}{\centerline {参\hspace{1em}考\hspace{1em}文\hspace{1em}献}\vskip -22pt} %距离参考文献列表的宽度,使得与结论等一样
+\bibliographystyle{MyBibStyle}
+%\addbibresource{Contents/Bibliography.bib}

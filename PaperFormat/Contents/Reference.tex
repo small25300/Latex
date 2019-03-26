@@ -1,0 +1,11 @@
+\clearpage
+%在addcontentsline{}{}{}前一定要加张\phantomsection命令，否则目录超链接跳转出错
+\phantomsection
+\addcontentsline{toc}{section}{参考文献}
+\bibliography{Contents/Bibliography.bib}
+
+%==========一条一条列出来==============%
+%\begin{thebibliography}{99} %99代表编号最多占两位,可以用ab等随意表示
+%	\bibitem[1]{article}\hspace{-0.5em}徐滨士,欧忠文,马世宁等.纳米表面工程.中国机械工程,2000,11(6):707-712.
+%\end{thebibliography}
+%======================上面这种方式不可以重复使用========%
