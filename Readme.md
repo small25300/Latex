@@ -16,3 +16,5 @@
 # github中的markdown文件支持latex公式最简单的方法
 - 在Chrome（谷歌）浏览器中安装插件：MathJax Plugin for Github即可，网址：https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima
   - 当然，该插件是Google开发的，因此只能Google浏览器使用，也就是说只有安装了该插件的Google浏览器才能将GitHub的markdown文件中的latex公式正常显示，剩余浏览器都是源代码显示。
+- 在github中书写文档换行时不同于其他markdown软件以及latex的“\\\\”换行，而是用两个空格进行换行。
+- 在google浏览器中安装插件后，给github写公式时，如果公式期间需要换行，则用\\\\\\\\可以进行换行，因为在github中的markdown中\\\\表示一条反斜杠。
